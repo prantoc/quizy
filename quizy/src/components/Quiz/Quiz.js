@@ -1,43 +1,25 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { Col, Container, Row, Card } from 'react-bootstrap';
-import { EyeIcon } from '@heroicons/react/24/solid'
+import './Quiz.css'
+import QuestionOption from '../QuestionOption/QuestionOption';
 const Quiz = () => {
     const datas = useLoaderData();
     const quizs = datas.data;
     const { id, name, questions } = quizs;
-    // console.log(questions[0].options);
+    // console.log(questions[0].id);
     return (
         <div>
-            <Container className='mt-5 pt-3'>
+            <Container className='my-5 py-3'>
                 <Row>
                     <Col md={12} className="mb-3">
                         <h1 className='text-center text-white'>Quiz Of {name}</h1>
                     </Col>
                     <Col lg={8} md={6}>
-                        <Card className='shadow-lg mb-5 rounded text-center'>
-                            <Card.Body>
-                                <Card.Title >
-                                    <Row>
-                                        <Col className='col-11'>
-                                            Which method will you use in react to display components for each object in an array?
-                                        </Col>
-                                        <div className="col-1 d-flex justify-content-end">
-                                            <EyeIcon style={{ cursor: "pointer" }} title='Check The Correct Answer' height={20} />
-                                        </div>
-                                    </Row>
-                                </Card.Title>
-                                <Row>
-                                    <Col className='col-6'>
-                                        <label className="form-check-label m-2 p-4 rounded d-flex justify-content-start border border-primary" for="flexRadioDefault1">
-                                            <input className="form-check-input p-2 me-2" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                        {
+                            questions.map(q => <QuestionOption key={q.id} allquestion={q}></QuestionOption>)
+                        }
 
-                                            building User Interface
-                                        </label>
-                                    </Col>
-                                </Row>
-                            </Card.Body>
-                        </Card>
                     </Col>
                     <Col lg={4} md={6}>
                         <Card className='shadow-lg mb-5 rounded'>
