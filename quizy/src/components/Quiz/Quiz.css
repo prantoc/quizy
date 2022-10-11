@@ -4,7 +4,13 @@
     border: 1px solid #FABE2C !important;
 }
 
-.form-check-label:active {
+.form-check-label {
+    background-color: #282C34 !important;
+    cursor: pointer !important;
+    border: 1px solid #FABE2C !important;
+}
+
+.active {
     background-color: #282C34 !important;
 
 }
