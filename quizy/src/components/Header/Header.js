@@ -5,10 +5,11 @@ import logo from '../../logo.png'
 import './Header.css'
 const Header = () => {
     return (
-        <header>
-            <Navbar bg="light" variant="light" expand="lg" className='p-3 mb-5 rounded'>
-                <Container>
-                    <Navbar.Brand href="/" className='fw-bold logo'><img src={logo} alt='Logo' width={30} /> <span className='logo-yellow'>Qui</span>zy </Navbar.Brand>
+        <Navbar bg="light" variant="light" expand="lg" className='p-3 rounded'>
+            <Container>
+                <Navbar.Brand href="/" className='fw-bold logo'><img src={logo} alt='Logo' width={30} /> <span className='logo-yellow'>Qui</span>zy </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <LinkContainer to="/">
                             <Nav.Link>Home</Nav.Link>
@@ -23,9 +24,9 @@ const Header = () => {
                             <Nav.Link>Blog</Nav.Link>
                         </LinkContainer>
                     </Nav>
-                </Container>
-            </Navbar>
-        </header>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
     );
 };
 
