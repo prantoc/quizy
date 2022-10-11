@@ -1,0 +1,10 @@
+.card {
+    background-color: #334155 !important;
+    box-shadow: rgb(30 64 175 / .1) !important;
+    border: gray !important;
+    color: #F9FCFF !important;
+}
+
+.git-svg {
+    color: #93C5FD !important;
+}
