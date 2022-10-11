@@ -1,15 +1,26 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap';
+import logo from '../../logo.png'
+import './Header.css'
 const Header = () => {
     return (
         <header>
             <Navbar bg="light" variant="light" expand="lg" className='p-3 mb-5 rounded'>
                 <Container>
-                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                    <Navbar.Brand href="/" className='fw-bold logo'><img src={logo} alt='Logo' width={30} /> <span className='logo-yellow'>Qui</span>zy </Navbar.Brand>
                     <Nav className="me-auto">
                         <LinkContainer to="/">
                             <Nav.Link>Home</Nav.Link>
+                        </LinkContainer>
+                        <LinkContainer to="quiz-topics">
+                            <Nav.Link>Quiz Topics</Nav.Link>
+                        </LinkContainer>
+                        <LinkContainer to="statistics">
+                            <Nav.Link>Statistics</Nav.Link>
+                        </LinkContainer>
+                        <LinkContainer to="blog">
+                            <Nav.Link>Blog</Nav.Link>
                         </LinkContainer>
                     </Nav>
                 </Container>

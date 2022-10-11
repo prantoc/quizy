@@ -1,0 +1,22 @@
+.logo {
+    color: #29376D !important;
+}
+
+.logo-yellow {
+    color: #FABE2C;
+}
+
+.nav-link {
+    color: #29376D !important;
+    font-weight: 600 !important;
+}
+
+.nav-link:hover {
+    color: #FABE2C !important;
+    font-weight: 600 !important;
+}
+
+.navbar-nav .nav-link.active {
+    color: #FABE2C !important;
+    font-weight: 600 !important;
+}
