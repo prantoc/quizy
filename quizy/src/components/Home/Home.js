@@ -9,7 +9,7 @@ const Home = () => {
     const topics = datas.data;
     return (
         <div>
-            <Container fluid className='cs-border shadow p-3 mb-5 rounded'>
+            <Container fluid className='cs-border shadow p-lg-3 mb-lg-5 rounded'>
                 <Row>
                     <Col className='slider-text' lg={6} md={6} sm={12}>
                         <h1 className='text-warning p-4'>Quziy is an quiz app</h1>
