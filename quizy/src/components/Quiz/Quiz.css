@@ -4,7 +4,11 @@
     border: 1px solid #FABE2C !important;
 }
 
+.form-check-label:active {
+    background-color: #282C34 !important;
+
+}
+
 .form-check-input:checked {
     background-color: #FABE2C !important;
-
 }

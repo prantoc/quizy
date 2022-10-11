@@ -1,8 +1,8 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const success = () => {
-    toast.success('🦄 success!', {
+const success = (id) => {
+    toast.success(' You did a great job!', {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -11,11 +11,11 @@ const success = () => {
         draggable: true,
         progress: undefined,
         theme: "light",
-        toastId: "success"
+        toastId: id
     });
 }
 
-const error = () => {
+const error = (id) => {
     toast.error("Your ans isn't correct! Please check your ans", {
         position: "top-center",
         autoClose: 5000,
@@ -25,7 +25,7 @@ const error = () => {
         draggable: true,
         progress: undefined,
         theme: "light",
-        toastId: "error"
+        toastId: id
     });
 }
 

@@ -3,13 +3,25 @@ import { useLoaderData } from 'react-router-dom';
 import { Col, Container, Row, Card } from 'react-bootstrap';
 import './Quiz.css'
 import QuestionOption from '../QuestionOption/QuestionOption';
+import { error, success } from '../../Toast/Toast';
+import { Flip, ToastContainer } from 'react-toastify';
 const Quiz = () => {
     const datas = useLoaderData();
     const quizs = datas.data;
     const { id, name, questions } = quizs;
-    // console.log(questions[0].id);
+    const checkAns = (pid, i, options, correctAnswer) => {
+        const getItem = questions.find(q => q.id === pid);
+        const gCosOp = (pid === getItem.id && options[i]); //gCosOp = getChoosenOption
+        if (gCosOp === correctAnswer) {
+            success(pid + i);
+        } else {
+            error(pid + i);
+        }
+    }
+
     return (
         <div>
+            <ToastContainer transition={Flip} />
             <Container className='my-5 py-3'>
                 <Row>
                     <Col md={12} className="mb-3">
@@ -17,7 +29,7 @@ const Quiz = () => {
                     </Col>
                     <Col lg={8} md={6}>
                         {
-                            questions.map(q => <QuestionOption key={q.id} allquestion={q}></QuestionOption>)
+                            questions.map(q => <QuestionOption checkAns={checkAns} key={q.id} allquestion={q}></QuestionOption>)
                         }
 
                     </Col>
