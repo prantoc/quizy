@@ -1,7 +1,7 @@
 # Getting Started with Quizy
 # Project Title
 
-Quizy a smart online testing app
+Quizy a smart online learning app
 
 
 ## Demo
@@ -11,10 +11,10 @@ https://genuine-raindrop-e9583c.netlify.app/
 
 ## Features
 
-- A lot of quizes for new learner to check their coding knowladge
-- Real time notify the quiz results
+- A lot of quizzes for new learners to check their coding knowledge
+- Real-time notify the quiz results
 - Score checking
-- Topics quiz ratio view into the smart chart
+- Topics quiz ratio has shown in the chart
 
 
 ![Logo](https://genuine-raindrop-e9583c.netlify.app/static/media/logo.97d246a1f53c57bb2dd9.png)
