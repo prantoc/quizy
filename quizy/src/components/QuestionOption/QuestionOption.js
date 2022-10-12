@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Col, Row, Card } from 'react-bootstrap';
-import { EyeIcon } from '@heroicons/react/24/solid'
+import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
 const QuestionOption = ({ allquestion, checkAns }) => {
     const { id, question, correctAnswer, options } = allquestion;
     const [showAns, setShowAns] = useState(false);
@@ -13,8 +13,14 @@ const QuestionOption = ({ allquestion, checkAns }) => {
                             <Col className='col-11 py-4 mb-2'>
                                 {question.replace(/(<([^>]+)>)/ig, '')}
                             </Col>
-                            <div className="col-1 d-flex justify-content-end">
-                                <EyeIcon style={{ cursor: "pointer" }} onClick={() => setShowAns(!showAns)} title='Check The Correct Answer' width={20} height={25} />
+                            <div className="col-1 d-flex justify-content-end" onClick={() => setShowAns(!showAns)}>
+                                {
+                                    showAns ?
+                                        <EyeSlashIcon style={{ cursor: "pointer" }} title='Check The Correct Answer' width={20} height={25} />
+                                        :
+                                        <EyeIcon style={{ cursor: "pointer" }} title='Hide The Correct Answer' width={20} height={25} />
+                                }
+
                             </div>
                         </Row>
                     </Card.Title>
