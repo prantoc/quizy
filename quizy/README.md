@@ -1,3 +1,26 @@
+# Getting Started with Quizy
+# Project Title
+
+Quizy a smart online testing app
+
+
+## Demo
+
+https://genuine-raindrop-e9583c.netlify.app/
+
+
+## Features
+
+- A lot of quizes for new learner to check their coding knowladge
+- Real time notify the quiz results
+- Score checking
+- Topics quiz ratio view into the smart chart
+
+
+![Logo](https://genuine-raindrop-e9583c.netlify.app/static/media/logo.97d246a1f53c57bb2dd9.png)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
