@@ -11,6 +11,7 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Layouts />,
         children: [
+            { path: "*", element: <Error /> },
             {
                 path: "/",
                 element: <Home />,
@@ -37,5 +38,5 @@ export const router = createBrowserRouter([
             },
         ],
     },
-    { path: '*', element: <Error /> }
+    { path: "*", element: <Error /> }
 ]);

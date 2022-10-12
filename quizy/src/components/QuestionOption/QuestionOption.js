@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Col, Row, Card } from 'react-bootstrap';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
-const QuestionOption = ({ allquestion, checkAns }) => {
+const QuestionOption = ({ allquestion, checkAns, total, index, setIs }) => {
     const { id, question, correctAnswer, options } = allquestion;
     const [showAns, setShowAns] = useState(false);
     return (
@@ -10,10 +10,10 @@ const QuestionOption = ({ allquestion, checkAns }) => {
                 <Card.Body>
                     <Card.Title >
                         <Row>
-                            <Col className='col-11 py-4 mb-2'>
-                                {question.replace(/(<([^>]+)>)/ig, '')}
+                            <Col className='col-6 text-start'>
+                                <small style={{ fontSize: "13px" }}>{index + 1} out of {total} Quiz</small>
                             </Col>
-                            <div className="col-1 d-flex justify-content-end" onClick={() => setShowAns(!showAns)}>
+                            <div className="col-6 d-flex justify-content-end" onClick={() => setShowAns(!showAns)}>
                                 {
                                     showAns ?
                                         <EyeSlashIcon style={{ cursor: "pointer" }} title='Check The Correct Answer' width={20} height={25} />
@@ -22,15 +22,19 @@ const QuestionOption = ({ allquestion, checkAns }) => {
                                 }
 
                             </div>
+                            <Col className='col-12 py-4 mb-2'>
+                                {question.replace(/(<([^>]+)>)/ig, '')}
+                            </Col>
+
                         </Row>
                     </Card.Title>
                     <Row>
                         {
-                            options.map((op, i) => (
+                            options?.map((op, i) => (
                                 <Col lg={6} md={12} sm={12} key={i}>
                                     <label
                                         className="form-check-label m-2 p-4 rounded d-flex justify-content-start border border-primary"
-                                        htmlFor={`flexRadioDefault${op}`} onClick={() => checkAns(id, i, options, correctAnswer)}>
+                                        htmlFor={`flexRadioDefault${op}`} onClick={() => { checkAns(id, i, options, correctAnswer, id + i); setIs() }}>
                                         <input className="form-check-input p-2 me-2" type="radio" name={`flexRadioDefault${id}`} id={`flexRadioDefault${op}`} />
                                         {op}
                                     </label>
@@ -49,7 +53,7 @@ const QuestionOption = ({ allquestion, checkAns }) => {
                     </Row>
                 </Card.Body>
             </Card>
-        </div>
+        </div >
     );
 };
 
