@@ -1,7 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
+import Error from "../components/Error/Error";
 import Home from "../components/Home/Home";
 import Quiz from "../components/Quiz/Quiz";
 import QuizTopic from "../components/QuizTopics/QuizTopic";
+import Statistics from "../components/Statistics/Statistics";
 import Layouts from "../layouts/Layouts";
 export const router = createBrowserRouter([
     {
@@ -25,7 +27,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "statistics",
-                element: <Home />,
+                element: <Statistics />,
             },
             {
                 path: "blog",
@@ -33,4 +35,5 @@ export const router = createBrowserRouter([
             },
         ],
     },
+    { path: '*', element: <Error /> }
 ]);
