@@ -11,7 +11,6 @@ const Quiz = () => {
     const { name, questions, total } = quizs;
     const [cAns, setCAns] = useState(0);
     const checkAns = (pid, i, options, correctAnswer, hh) => {
-        console.log(hh);
         const getItem = questions.find(q => q.id === pid);
         const gCosOp = (pid === getItem.id && options[i]); //gCosOp = getChoosenOption
         if (gCosOp === correctAnswer) {

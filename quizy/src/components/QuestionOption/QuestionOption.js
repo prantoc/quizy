@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Col, Row, Card } from 'react-bootstrap';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
-const QuestionOption = ({ allquestion, checkAns, total, index, setIs }) => {
+const QuestionOption = ({ allquestion, checkAns, total, index }) => {
     const { id, question, correctAnswer, options } = allquestion;
     const [showAns, setShowAns] = useState(false);
     return (
@@ -34,7 +34,7 @@ const QuestionOption = ({ allquestion, checkAns, total, index, setIs }) => {
                                 <Col lg={6} md={12} sm={12} key={i}>
                                     <label
                                         className="form-check-label m-2 p-4 rounded d-flex justify-content-start border border-primary"
-                                        htmlFor={`flexRadioDefault${op}`} onClick={() => { checkAns(id, i, options, correctAnswer, id + i); setIs() }}>
+                                        htmlFor={`flexRadioDefault${op}`} onClick={() => checkAns(id, i, options, correctAnswer, id + i)}>
                                         <input className="form-check-input p-2 me-2" type="radio" name={`flexRadioDefault${id}`} id={`flexRadioDefault${op}`} />
                                         {op}
                                     </label>
