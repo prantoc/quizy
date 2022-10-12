@@ -33,7 +33,7 @@ const Quiz = () => {
                     </Col>
                     <Col lg={8} md={6}>
                         {
-                            questions.map((q, i) => <QuestionOption total={total} checkAns={checkAns} key={q.id} allquestion={q} index={i}></QuestionOption>)
+                            questions?.map((q, i) => <QuestionOption total={total} checkAns={checkAns} key={q.id} allquestion={q} index={i}></QuestionOption>)
                         }
 
                     </Col>
